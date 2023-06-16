@@ -1,15 +1,17 @@
 import moment from "moment";
 import Link from "next/link";
 import { render } from 'storyblok-rich-text-react-renderer';
- 
+import Image from "next/image";
 const ArticleTeaser = ({ article }) => {
 return (
     <div className="border overflow-hidden rounded-md shadow-sm">
         <Link href={`/blog/${article.slug}`}>
-            <img
+            <Image
                 className="object-cover object-center w-full mb-2 lg:h-64 md:h-64 "
                 src={article.image.filename}
-                alt="blog"
+                alt={article.title}
+                width={1920}
+                height={1080}
             />
         </Link>
         <div className="p-4">
